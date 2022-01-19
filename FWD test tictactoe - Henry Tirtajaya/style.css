@@ -1,0 +1,39 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#whoseTurn {
+	font-size: 50px;
+	margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#tictactoe {
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+#header{
+    text-align: center;
+}
+
+h1, h3 {
+	margin: 50px;
+}
+
+input {
+	margin: 10px;
+	font-size: 20px;
+}
+
+button {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-size: 20px;
+	padding: 10px 20px;
+}

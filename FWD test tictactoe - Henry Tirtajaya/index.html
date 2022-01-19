@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Henry's Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="index.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body style='font-family: Arial, Helvetica, sans-serif;'>
+	<div id="header">
+		<h1>Tic Tac Toe - Henry Tirtajaya</h1>
+        <h5>Board size 3 to 20 only!</h5>
+	</div>
+	<div id="options">
+		<form id="options">
+			<label for="board_size">Board Size:</label>
+				<input id="board_size" 
+                    type="number" 
+                    min="3" max="20" 
+                    v-model="model.board_number"
+                    @change="validateBoard()"
+                    ></input>
+                    <h5 v-if="model.board_number">
+                        {{ model.board_number }} x {{ model.board_number }} Board
+                    </h5>
+        </form>
+		<button id="options_submit">Generate</button>
+
+        <div v-if="model.board_number">
+            <div id="whoseTurn"></div>
+            <div id="tictactoe"></div>
+        </div>
+	</div>
+    
+</body>
+</html>
+
+<script>
+    var app = new Vue({
+        el: '#options',
+        data: {
+            model:{
+                board_number: 3
+            }
+        },
+         watch: {
+             
+         },
+        methods:{
+            validateBoard(){
+                if(this.model.board_number<3 || this.model.board_number>20){
+                    alert("Invalid board size, please input 3 - 20!");
+                    this.model.board_number = '';
+                }
+            }
+        }
+
+        })
+</script>
